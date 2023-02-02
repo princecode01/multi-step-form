@@ -142,7 +142,7 @@ input[type=number]::-webkit-inner-spin-button {
     background-color: hsl(206, 94%, 87%);
 }
 
-input[ type = radio] {
+input[ type=radio] {
     display: none;
 }
 
@@ -268,7 +268,7 @@ input:checked+.slider:before {
     color: hsl(243, 100%, 62%);
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (min-width: 0px) and (max-width: 500px) {
 
     .body {
         width: 100%;
