@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon-32x32.png">
+    <title>Multi-step Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="http://yui.yahooapis.com/3.11.0/build/cssnormalize/cssnormalize-min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class=" d-flex justify-content-center align-items-center vh-100">
+        <div class="body">
+            <div class="row justify-content-between align-items-center register">
+                <div class="col-xl-4">
+                    <div class="steps">
+                        <div class="steps-container">
+                            <div class="step step-1">
+                                <div class="step-circle">1</div>
+                                <div class="step-info">
+                                    <small>STEP 1</small>
+                                    <h6>YOUR INFO</h6>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-circle">2</div>
+                                <div class="step-info">
+                                    <small>STEP 2</small>
+                                    <h6>SELECT PLAN</h6>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-circle">3</div>
+                                <div class="step-info">
+                                    <small>STEP 3</small>
+                                    <h6>ADD-ONS</h6>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-circle">4</div>
+                                <div class="step-info">
+                                    <small>STEP 4</small>
+                                    <h6>SUMMARY</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 flex-grow-1">
+                    <form>
+                        <div class="d-flex justify-content-center">
+                            <div class="steps-content w-75 py-5">
+
+                                <div class="user user-data active">
+
+                                    <div class="head mb-5">
+                                        <h2 class="step-name">Personal info</h2>
+                                        <p>Please provide your name, email address, and phone number.
+                                        </p>
+                                    </div>
+
+                                    <div class="input">
+                                        <label for="nameInput">Name</label>
+                                        <input id="nameInput" name="userName" class="form-control" type="text"
+                                            placeholder="e.g. Stephen King">
+                                    </div>
+                                    <div class="input">
+                                        <label for="emailInput">Email Address</label>
+                                        <input id="emailInput" name="userEmail" class="form-control" type="email"
+                                            placeholder="e.g. stephenking@lorem.com">
+                                    </div>
+                                    <div class="input">
+                                        <label for="phoneInput">Phone Number</label>
+                                        <input id="phoneInput" name="userNumber" class="form-control" type="number"
+                                            placeholder="e.g. +1 234 567 890">
+                                    </div>
+
+                                    <div class="buttons">
+                                        <div class="button">
+                                            <button id="right-button" type="button" class="btn right-button">Next
+                                                Step</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="user user-plan">
+
+                                    <div class="head mb-5">
+                                        <h2 class="step-name">Select your plan</h2>
+                                        <p>Yo have the option of monthly or yearly billing.</p>
+                                    </div>
+
+                                    <div class="row justify-content-between">
+                                        <div class="col-md-4">
+
+                                            <label for="Arcade" class="plan">
+                                                <input id="Arcade" type="radio" name="plan" value="Arcade" checked>
+                                                <div class="plan-icon">
+                                                    <img src="images/icon-arcade.svg" alt="arcade">
+                                                </div>
+                                                <div class="plan-info">
+                                                    <h5>Arcade</h5>
+                                                    <p>$<span class="price">9</span>/<span class="year">mo</span></p>
+                                                    <small></small>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <label for="Advanced" class="plan">
+                                                <input id="Advanced" type="radio" name="plan" value="Advanced" checked>
+                                                <div class="plan-icon">
+                                                    <img src="images/icon-advanced.svg" alt="advanced">
+                                                </div>
+                                                <div class="plan-info">
+                                                    <h5>Advanced</h5>
+                                                    <p>$<span class="price">12</span>/<span class="year">mo</span></p>
+                                                    <small></small>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="Pro" class="plan">
+                                                <input id="Pro" type="radio" name="plan" value="Pro" checked>
+                                                <div class="plan-icon">
+                                                    <img src="images/icon-pro.svg" alt="pro">
+                                                </div>
+                                                <div class="plan-info">
+                                                    <h5>Pro</h5>
+                                                    <p>$<span class="price">15</span>/<span class="year">mo</span></p>
+                                                    <small></small>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="duration mt-4 mb-5 d-flex justify-content-center align-items-center">
+                                        <p class="me-3">Monthly</p>
+                                        <label class="switch">
+                                            <input name="yearly" type="checkbox" id="switch">
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <p class="ms-3">Yearly</p>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <div class="button">
+                                            <button id="left-button" type="button" class="btn left-button">Go
+                                                Back</button>
+                                        </div>
+
+                                        <div class="button">
+                                            <button id="right-button" type="button" class="btn right-button">Next
+                                                Step</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="user user-adds">
+
+                                    <div class="head mb-5">
+                                        <h2 class="step-name">Pick add-ons</h2>
+                                        <p>Add-ons help enhance your gaming experience.</p>
+                                    </div>
+
+                                    <label for="onlineService" class="add">
+                                        <div class="d-flex align-items-center">
+                                            <div class="add-check me-4">
+                                                <input id="onlineService" name="onlineService" type="checkbox">
+                                            </div>
+                                            <div class="add-info">
+                                                <p>Online Service</p>
+                                                <small>Access to multiplayer games</small>
+                                            </div>
+                                        </div>
+                                        <div class="add-price">
+                                            <p>+$<span class="over-price">1</span>/<span class="year">mo</span></p>
+                                        </div>
+                                    </label>
+                                    <label for="largerStorage" class="add">
+                                        <div class="d-flex align-items-center">
+                                            <div class="add-check me-4">
+                                                <input id="largerStorage" name="largerStorage" type="checkbox">
+                                            </div>
+                                            <div class="add-info">
+                                                <p>Larger Storage</p>
+                                                <small>Extra 1TB of cloud save</small>
+                                            </div>
+                                        </div>
+                                        <div class="add-price">
+                                            <p>+$<span class="over-price">2</span>/<span class="year">mo</span></p>
+                                        </div>
+                                    </label>
+                                    <label for="customizeProfile" class="add">
+                                        <div class="d-flex align-items-center">
+                                            <div class="add-check me-4">
+                                                <input id="customizeProfile" name="customizeProfile" type="checkbox">
+                                            </div>
+                                            <div class="add-info">
+                                                <p>Customizable profile</p>
+                                                <small>custom theme on your profile</small>
+                                            </div>
+                                        </div>
+                                        <div class="add-price">
+                                            <p>+$<span class="over-price">2</span>/<span class="year">mo</span></p>
+                                        </div>
+                                    </label>
+
+                                    <div class="buttons">
+                                        <div class="button">
+                                            <button id="left-button" type="button" class="btn left-button">Go
+                                                Back</button>
+                                        </div>
+
+                                        <div class="button">
+                                            <button id="right-button" type="button" class="btn right-button">Next
+                                                Step</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="user user-summary">
+
+                                    <div class="head mb-5">
+                                        <h2 class="step-name">Finishing up</h2>
+                                        <p>Double-check everything looks OK before confirming.</p>
+                                    </div>
+
+                                    <div class="final-plan">
+                                        <div class="final-top mb-3 d-flex justify-content-between align-items-center">
+                                            <div class="final-info pb-3">
+                                                <p></p>
+                                                <small class="change-btn">change</small>
+                                            </div>
+                                            <div class="final-price">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="final-bottom">
+                                           <!-- content will be added with js  -->
+                                        </div>
+                                    </div>
+
+                                    <div class="total-price p-3 d-flex justify-content-between">
+                                        <small>Total (per month)</small>
+                                        <h5 style="color: hsl(243, 100%, 62%); font-weight: 700;"></h5>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <div class="button">
+                                            <button id="left-button" type="button" class="btn left-button">Go
+                                                Back</button>
+                                        </div>
+
+                                        <div class="button">
+                                            <button id="confirm" type="submit" class="btn confirm">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="thank-you text-center p-3" style="display: none;">
+                    <img src="images/icon-thank-you.svg" alt="thank-you">
+                    <h2 class="my-4">Thank you</h2>
+                    <small>Thanks for confirming your subscription! We hope you have fun using our platform. If you need
+                        support, please fell free to email us at support@loremgaming.com.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
