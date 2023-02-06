@@ -1,4 +1,3 @@
-/// <reference path="../typings/globals/jquery/index.d.ts" />
 const register = document.querySelector('.register');
 const thankYou = document.querySelector('.thank-you');
 const circles = document.querySelectorAll('.step-circle');
@@ -9,9 +8,28 @@ const form = document.querySelector('form');
 
 nextButton.forEach(button => {
     button.addEventListener('click', () => {
-        changeStep('next');
-        if (stepIndex == 3) {
-            calcTotalPrice();
+        if (stepIndex == 0) {
+            if (correctName && correctEmail && correctPhone) {
+                changeStep('next')
+            }
+        }
+        else if (stepIndex == 1) {
+            const planAlert = document.getElementById('planalert');
+            // console.log(planAlert)
+            const planChecked = document.querySelector('.plan-check');
+            if (planChecked != null) {
+                planAlert.classList.replace("d-block", "d-none");
+                changeStep('next');
+            }
+            else {
+                planAlert.classList.replace("d-none", "d-block");
+            }
+
+        } else {
+            changeStep('next');
+            if (stepIndex == 3) {
+                calcTotalPrice();
+            }
         }
     })
 })
@@ -56,26 +74,6 @@ let changeStep = (btn) => {
     // change circle background 
     circleBackground();
 }
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // const inputs = [];
-    // form.querySelectorAll('input').forEach(input => {
-    //     const { name, value } = input;
-    //     inputs.push({ name, value })
-    // })
-    // console.log(inputs);
-    // form.reset();
-
-    // stepIndex = 0;
-    // const active = document.querySelector('form .user.active');
-    // stepIndex = users.indexOf(active);
-    // users[stepIndex].classList.remove('active');
-    // users[stepIndex].classList.add('active');
-
-    register.style.display = 'none';
-    thankYou.style.display = 'block';
-})
 
 
 // choosing plan 
@@ -125,7 +123,7 @@ const setYear = () => {
         });
         // over price per month
         overPrice.forEach(over => {
-            over.innerHTML *= 10;
+            over.innerHTML /= 10;
         });
         // switch month to month
         perYear.forEach(year => {
@@ -212,3 +210,89 @@ let calcTotalPrice = () => {
     totalPrice.innerHTML = `+$${planValue + planAddsValue}/${year.innerHTML}`;
 }
 
+let userEmail = document.getElementById('emailInput');
+let userName = document.getElementById('nameInput');
+let userPhone = document.getElementById('phoneInput');
+
+const nameAlert = document.getElementById('namealert');
+const emailAlert = document.getElementById('emailalert');
+const phoneAlert = document.getElementById('phonealert');
+
+let userNameValid = () => {
+    return /^[a-zA-Z ]+$/.test(userName.value)
+}
+
+let userEmailValid = () => {
+    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(userEmail.value)
+}
+
+let userPhoneValid = () => {
+    return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(userPhone.value)
+}
+
+let correctName = false;
+let correctEmail = false;
+let correctPhone = false;
+
+userEmail.addEventListener('input', () => {
+    if (userEmailValid()) {
+        correctEmail = true;
+        userEmail.classList.remove("is-invalid")
+        userEmail.classList.add("is-valid")
+        emailAlert.classList.replace("d-block", "d-none")
+
+    } else {
+        correctEmail = false;
+        userEmail.classList.replace("is-valid", "is-invalid")
+        emailAlert.classList.replace("d-none", "d-block")
+    }
+})
+
+userName.addEventListener('input', () => {
+    if (userNameValid()) {
+        correctName = true;
+        userName.classList.remove("is-invalid")
+        userName.classList.add("is-valid")
+        nameAlert.classList.replace("d-block", "d-none")
+
+    } else {
+        correctName = false;
+        userName.classList.replace("is-valid", "is-invalid")
+        nameAlert.classList.replace("d-none", "d-block")
+    }
+})
+
+userPhone.addEventListener('input', () => {
+    if (userPhoneValid()) {
+        correctPhone = true;
+        userPhone.classList.remove("is-invalid")
+        userPhone.classList.add("is-valid")
+        phoneAlert.classList.replace("d-block", "d-none")
+    } else {
+        correctPhone = false;
+        userPhone.classList.replace("is-valid", "is-invalid")
+        phoneAlert.classList.replace("d-none", "d-block")
+    }
+})
+
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // const inputs = [];
+    // form.querySelectorAll('input').forEach(input => {
+    //     const { name, value } = input;
+    //     inputs.push({ name, value })
+    // })
+    // console.log(inputs);
+    // form.reset();
+
+    // stepIndex = 0;
+    // const active = document.querySelector('form .user.active');
+    // stepIndex = users.indexOf(active);
+    // users[stepIndex].classList.remove('active');
+    // users[stepIndex].classList.add('active');
+
+    register.style.display = 'none';
+    thankYou.style.display = 'block';
+})

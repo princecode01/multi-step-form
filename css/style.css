@@ -255,8 +255,9 @@ input:checked+.slider:before {
     margin-bottom: 20px;
 }
 
-.final-top {
-    border-bottom: 1px solid gray;
+.final-bottom {
+    padding-top: 10px;
+    border-top: 1px solid gray;
 }
 
 .change-btn {

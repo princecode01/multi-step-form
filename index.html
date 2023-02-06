@@ -73,16 +73,25 @@
                                         <label for="nameInput">Name</label>
                                         <input id="nameInput" name="userName" class="form-control" type="text"
                                             placeholder="e.g. Stephen King">
+                                        <div class="alert mt-1 alert-danger d-none" id="namealert" role="alert">
+                                            Enter a valid name
+                                        </div>
                                     </div>
                                     <div class="input">
                                         <label for="emailInput">Email Address</label>
                                         <input id="emailInput" name="userEmail" class="form-control" type="email"
                                             placeholder="e.g. stephenking@lorem.com">
+                                        <div class="alert mt-1 alert-danger  d-none" id="emailalert" role="alert">
+                                            Enter a valid email
+                                        </div>
                                     </div>
                                     <div class="input">
                                         <label for="phoneInput">Phone Number</label>
                                         <input id="phoneInput" name="userNumber" class="form-control" type="number"
                                             placeholder="e.g. +1 234 567 890">
+                                        <div class="alert mt-1 alert-danger  d-none" id="phonealert" role="alert">
+                                            Enter a valid phone number
+                                        </div>
                                     </div>
 
                                     <div class="buttons">
@@ -153,6 +162,10 @@
                                             <span class="slider round"></span>
                                         </label>
                                         <p class="ms-3">Yearly</p>
+                                    </div>
+
+                                    <div class="alert mt-1 alert-danger d-none" id="planalert" role="alert">
+                                        You must choose a plan.
                                     </div>
 
                                     <div class="buttons">
@@ -249,7 +262,7 @@
                                             </div>
                                         </div>
                                         <div class="final-bottom">
-                                           <!-- content will be added with js  -->
+                                            <!-- content will be added with js  -->
                                         </div>
                                     </div>
 
@@ -269,7 +282,6 @@
                                         </div>
                                     </div>
                                 </div>
-
 
                             </div>
                         </div>
