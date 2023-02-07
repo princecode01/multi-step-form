@@ -12,6 +12,13 @@ nextButton.forEach(button => {
             if (correctName && correctEmail && correctPhone) {
                 changeStep('next')
             }
+            
+            const personalInfoAlert = document.getElementById('p-info-alert');
+            if (!correctName && !correctEmail && !correctPhone) {
+                personalInfoAlert.classList.remove('d-none');
+            } else {
+                personalInfoAlert.classList.add('d-none');
+            }
         }
         else if (stepIndex == 1) {
             const planAlert = document.getElementById('planalert');
@@ -209,6 +216,8 @@ let calcTotalPrice = () => {
     let totalPrice = document.querySelector('.total-price h5');
     totalPrice.innerHTML = `+$${planValue + planAddsValue}/${year.innerHTML}`;
 }
+
+// validation
 
 let userEmail = document.getElementById('emailInput');
 let userName = document.getElementById('nameInput');
