@@ -308,7 +308,7 @@ input:checked+.slider:before {
     .user {
         position: relative;
         left: 0;
-        top: -70px;
+        top: -80px;
         background-color: white;
         padding: 15px;
         border-radius: 5px;
@@ -324,16 +324,20 @@ input:checked+.slider:before {
 
     .steps-content {
         padding-bottom: 0 !important;
+        position: relative;
     }
 
     .buttons {
         position: fixed !important;
         left: 0;
-        bottom: 0;
+        bottom: 20px;
         right: 0;
         background-color: white;
         padding: 10px;
         margin-top: 0px;
+    }
+    .right-button{
+        margin-right: 10px;
     }
 
     .plan {
