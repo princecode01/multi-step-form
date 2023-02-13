@@ -16,7 +16,7 @@ body {
 
 .body {
     background-color: hsl(0, 0%, 100%);
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 15px;
     width: 60%;
 }
@@ -330,15 +330,13 @@ input:checked+.slider:before {
     .buttons {
         position: fixed !important;
         left: 0;
-        bottom: 20px;
+        bottom: 0;
         right: 0;
         background-color: white;
         padding: 10px;
         margin-top: 0px;
     }
-    .right-button{
-        margin-right: 10px;
-    }
+
 
     .plan {
         flex-direction: row;
@@ -358,6 +356,10 @@ input:checked+.slider:before {
     .duration {
         margin-top: 10px !important;
         margin-bottom: 0 !important;
+    }
+
+    .row {
+        --bs-gutter-x: 0 !important;
     }
 
 }
