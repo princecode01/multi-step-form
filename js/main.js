@@ -14,7 +14,7 @@ nextButton.forEach(button => {
             }
             
             const personalInfoAlert = document.getElementById('p-info-alert');
-            if (!correctName && !correctEmail && !correctPhone) {
+            if (!correctName || !correctEmail || !correctPhone) {
                 personalInfoAlert.classList.remove('d-none');
             } else {
                 personalInfoAlert.classList.add('d-none');
